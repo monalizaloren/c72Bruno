@@ -64,11 +64,11 @@ export default class TransactionScreen extends Component {
       .then(doc => {
         console.log(doc.data())
         var book = doc.data();
-        if (book.is_book_available) {
-          this.initiateBookIssue();
-        } else {
-          this.initiateBookReturn();
-        }
+        /*Esta seção do código verifica se o livro está disponível('book.is_book_available') ou não. 
+        Se o livro estiver disponível, a função initiateBookIssue() será chamada para 
+        iniciar o processo de empréstimo do livro. Caso contrário, a função 
+        initiateBookReturn() será chamada para iniciar o processo de devolução do livro. */
+       ///???
       });
   };
 
@@ -107,7 +107,10 @@ export default class TransactionScreen extends Component {
               />
               <TouchableOpacity
                 style={styles.scanbutton}
-                onPress={() => this.getCameraPermissions("bookId")}
+/*Quando o usuário clica no botão, a função getCameraPermissions é chamada passando a 
+string "bookId" como parâmetro. Essa função solicita as permissões 
+necessárias para acessar a câmera do dispositivo, já que o objetivo é digitalizar algo.  */                
+               //??
               >
                 <Text style={styles.scanbuttonText}>Digitalizar</Text>
               </TouchableOpacity>
@@ -121,7 +124,12 @@ export default class TransactionScreen extends Component {
               />
               <TouchableOpacity
                 style={styles.scanbutton}
-                onPress={() => this.getCameraPermissions("studentId")}
+/*
+Este trecho de código está criando um botão de "Digitalizar" que, quando clicado, chama a função 
+getCameraPermissions() passando o parâmetro "studentId". Essa função é responsável por
+ solicitar permissão para acessar a câmera do dispositivo para que o usuário possa 
+ escanear o código de barras do ID do estudante.  */                
+                //??
               >
                 <Text style={styles.scanbuttonText}>Digitalizar</Text>
               </TouchableOpacity>
@@ -144,11 +152,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF"
   },
-  bgImage: {
-    flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center"
-  },
+
+  /*Adicone essas propriedades de estilo que estão sendo aplicadas a um componente que é uma imagem de fundo (background image).
+
+A propriedade flex: 1 faz com que a imagem ocupe toda a área disponível no componente pai.
+A propriedade resizeMode: "cover" garante que a imagem se ajuste à área disponível, de forma que todo o espaço seja preenchido sem distorcer a imagem.
+A propriedade justifyContent: "center" alinha o conteúdo verticalmente, centralizando-o no meio do componente pai.*/
+  //????
   upperContainer: {
     flex: 0.5,
     justifyContent: "center",
